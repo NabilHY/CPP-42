@@ -1,84 +1,45 @@
+#include <cctype> // for std::isdigit
 #include <iostream>
+#include <string>
 
-class AbstractEmployee
+bool	isValidInteger(const std::string &input)
 {
-	virtual void promoteEmployee() = 0;
-};
 
-class Employee : AbstractEmployee
-{
-	// Attributes
-  private:
-	std::string Name;
-	std::string Company;
-	int Age;
+	if (input.empty())
+		return (false);
+	for (int i = 0; i < input.length(); i++)
+	{
+		if (!std::isdigit(input[i]))
+			return (false);
+	}
+	return (true); // All characters are digits
+}
 
-  public:
-	// Behavior
-	Employee()
-	{
-		Age = 9999;
-		Name = "John Doe";
-		Company = "Morgue";
-	}
-	Employee(std::string name, std::string company, int age)
-	{
-		Name = name;
-		Company = company;
-		Age = age;
-	}
-	void promoteEmployee()
-	{
-		if (Age >= 25)
-			std::cout << "Elegible for a promotion\n";
-		else
-			std::cout << "Not Elegible\n";
-	}
-	void displayInfo()
-	{
-		std::cout << 
-	}
-	void setName(std::string name)
-	{
-		Name = name;
-	}
-	std::string getName()
-	{
-		return (Name);
-	}
-	void setAge(int age)
-	{
-		Age = age;
-	}
-	int getAge()
-	{
-		return (Age);
-	}
-	void info()
-	{
-		std::cout << "Name " << Name << std::endl;
-		std::cout << "Company " << Company << std::endl;
-		std::cout << "Age " << Age << std::endl;
-	}
-	// Constructor
-};
 
 int	main(void)
 {
-	Employee	employee1;
-	Employee	employee2;
+	std::string input;
+	int index;
 
-	employee1 = Employee("Nabil", "Oracle", 25);
-	employee2 = Employee("Jeffrey", "Meta", 18);
-	//std::cout << employee1.getName() << std::endl;
-	//employee1.promoteEmployee();
-	employee1.displayInfo();
+	// Continuously prompt the user until a valid integer is entered
+	while (true)
+	{
+		std::cout << "Please enter a valid index (integer): ";
+		std::cin >> input;
+
+		// Check if the input is a valid integer
+		if (isValidInteger(input))
+		{
+			index = std::stoi(input); // Convert the valid string to an integer
+			break ;                    // Exit the loop if input is valid
+		}
+		else
+		{
+			std::cout << "Invalid input. Please enter an integer.\n";
+		}
+	}
+
+	std::cout << "You entered a valid index: " << index << std::endl;
+
 	return (0);
 }
-
-/* Encapsulation
-	Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It refers to the bundling of data,
-		and the methods that operate on that data,
-		into a single unit known as a class. In C++,
-		this is achieved by using classes.
-*/
