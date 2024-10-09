@@ -1,45 +1,18 @@
 #include <cctype> // for std::isdigit
 #include <iostream>
 #include <string>
-
-bool	isValidInteger(const std::string &input)
-{
-
-	if (input.empty())
-		return (false);
-	for (int i = 0; i < input.length(); i++)
-	{
-		if (!std::isdigit(input[i]))
-			return (false);
-	}
-	return (true); // All characters are digits
-}
-
+#include <ctime>
 
 int	main(void)
 {
-	std::string input;
-	int index;
+	time_t timestamp;
+	char output[50];
+	struct tm *datetime;
 
-	// Continuously prompt the user until a valid integer is entered
-	while (true)
-	{
-		std::cout << "Please enter a valid index (integer): ";
-		std::cin >> input;
+	time(&timestamp);
+	strftime(cur_time);
+	cur_time = ctime(&timestamp);
 
-		// Check if the input is a valid integer
-		if (isValidInteger(input))
-		{
-			index = std::stoi(input); // Convert the valid string to an integer
-			break ;                    // Exit the loop if input is valid
-		}
-		else
-		{
-			std::cout << "Invalid input. Please enter an integer.\n";
-		}
-	}
-
-	std::cout << "You entered a valid index: " << index << std::endl;
-
+	std::cout << cur_time << std::endl;
 	return (0);
 }
