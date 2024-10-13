@@ -6,11 +6,12 @@
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 12:26:49 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/02 16:55:36 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/13 12:15:24 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+#include <cstring>
 #include <iostream>
 #include <string>
 
@@ -80,28 +81,48 @@ void Phonebook::display_contacts(Contact *contacts, int count)
 	std::cout << std::endl;
 }
 
+void Phonebook::get_input(std::string type, Contact *contacts, int index)
+{
+	std::string input;
+	while (!std::cin.eof())
+	{
+		std::cout << type << ": ";
+		std::getline(std::cin, input);
+		if (input.empty())
+		{
+			std::cout << "Invalid Input\n";
+			continue;
+		}
+		else
+		{
+			if (type == "First Name")
+				contacts[index].set_fn(input);
+			else if (type == "Last Name")
+				contacts[index].set_ln(input);
+			else if (type == "Nickname")
+				contacts[index].set_nn(input);
+			else if (type == "Phone Number")
+				contacts[index].set_pn(input);
+			else if (type == "Darkest Secret")
+				contacts[index].set_ds(input);
+			return ;
+		}
+	}
+	std::cout << "End of file, Exiting program\n";
+	exit(1);
+}
+
 void Phonebook::add(Contact *contacts, int *index)
 {
 	if (*index == 8)
 		*index = 0;
-	std::string input;
-	std::cout << "First Name: ";
-	std::getline(std::cin, input);
-	contacts[*index].set_fn(input);
-	std::cout << "Last Name: ";
-	std::getline(std::cin, input);
-	contacts[*index].set_ln(input);
-	std::cout << "Nickname: ";
-	std::getline(std::cin, input);
-	contacts[*index].set_nn(input);
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, input);
-	contacts[*index].set_pn(input);
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, input);
-	contacts[*index].set_ds(input);
+	get_input("First Name", contacts, *index);
+	get_input("Last Name", contacts, *index);
+	get_input("Nickname", contacts, *index);
+	get_input("Phone Number", contacts, *index);
+	get_input("Darkest Secret", contacts, *index);
 	(*index)++;
-	std::cout << " +++ Contact Added Succesefully +++\n";
+	std::cout << " +++ Contact Added Successfully +++\n";
 }
 
 void Phonebook::contact_index(Contact *contacts, int count)
@@ -113,7 +134,7 @@ void Phonebook::contact_index(Contact *contacts, int count)
 	{
 		std::cout << "Enter a valid index: ";
 		std::getline(std::cin, index);
-		i = std::stoi(index);
+		i = std::atoi(index.c_str());
 		if (is_valid(index) && i < count)
 		{
 			std::cout << "-------------------" << std::endl;
@@ -140,6 +161,7 @@ int	main(void)
 
 	index = 0;
 	count = 0;
+	choice = "string";
 	while (1)
 	{
 		phonebook.display_menu();
@@ -147,7 +169,7 @@ int	main(void)
 		if (std::cin.eof())
 		{
 			std::cout << "End of file, Exiting program\n";
-			break;
+			exit(1);
 		}
 		transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
 		if (choice == "ADD")

@@ -8,6 +8,9 @@ all: $(NAME)
 
 $(NAME): $(INCLUDE)
 	$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
+
 clean:
 	rm $(NAME)
+
+
 re : clean all
