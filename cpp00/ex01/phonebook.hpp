@@ -13,6 +13,7 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+#include <stdlib.h>
 # include "contact.hpp"
 # include <iomanip>
 # include <iostream>
@@ -23,7 +24,7 @@ class Phonebook
   private:
 	static int Index;
 	Contact Contacts[8];
-
+  
   public:
 	void row_top();
 	std::string get_trunc(std::string &str);
@@ -33,6 +34,7 @@ class Phonebook
 	void display_menu(void);
 	void display_contacts(Contact *contacts, int count);
 	void contact_index(Contact *contacts, int count);
+	void	skip_spaces(std::string &str);
 };
 
 #endif

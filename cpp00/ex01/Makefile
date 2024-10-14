@@ -1,16 +1,22 @@
 CPP = c++
 FLAGS = -std=c++98 -Wall -Wextra -Werror
-SRCS = phonebook.cpp contact.cpp
+SRCS = contact.cpp
+MAIN = phonebook.cpp
+OBJS = $(SRCS:%.cpp=%.o)
 INCLUDE = phonebook.hpp contact.hpp
 NAME = phonebook
 
 all: $(NAME)
 
-$(NAME): $(INCLUDE)
-	$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(MAIN) $(OBJS)  $(INCLUDE)
+	$(CPP) $(FLAGS) $(OBJS) $(MAIN) -o $(NAME)
+
+%.o:%.cpp
+	$(CPP) $(FLAGS) -c $< -o $@
 
 clean:
-	rm $(NAME)
-
+	rm -rf $(OBJS)
+fclean:
+	rm -rf $(NAME)
 
 re : clean all

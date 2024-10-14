@@ -27,6 +27,12 @@ bool	is_valid(const std::string &input)
 	return (true);
 }
 
+void	Phonebook::skip_spaces(std::string &str)
+{
+	str.erase(str.find_last_not_of("\n\t \r") + 1);
+	str.erase(0,str.find_first_not_of("\n\t \r"));
+}
+
 void Phonebook::display_menu(void)
 {
 	std::cout << "\nPhonebook Menu:" << std::endl;
@@ -81,6 +87,7 @@ void Phonebook::display_contacts(Contact *contacts, int count)
 	std::cout << std::endl;
 }
 
+
 void Phonebook::get_input(std::string type, Contact *contacts, int index)
 {
 	std::string input;
@@ -95,6 +102,7 @@ void Phonebook::get_input(std::string type, Contact *contacts, int index)
 		}
 		else
 		{
+			skip_spaces(input);
 			if (type == "First Name")
 				contacts[index].set_fn(input);
 			else if (type == "Last Name")
@@ -171,7 +179,6 @@ int	main(void)
 			std::cout << "End of file, Exiting program\n";
 			exit(1);
 		}
-		transform(choice.begin(), choice.end(), choice.begin(), ::toupper);
 		if (choice == "ADD")
 		{
 			phonebook.add(contacts, &index);
