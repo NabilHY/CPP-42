@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 12:26:49 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/13 12:15:24 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/14 15:29:33 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ bool	is_valid(const std::string &input)
 	return (true);
 }
 
-void	Phonebook::skip_spaces(std::string &str)
+void Phonebook::skip_spaces(std::string &str)
 {
 	str.erase(str.find_last_not_of("\n\t \r") + 1);
-	str.erase(0,str.find_first_not_of("\n\t \r"));
+	str.erase(0, str.find_first_not_of("\n\t \r"));
 }
 
 void Phonebook::display_menu(void)
@@ -87,7 +87,6 @@ void Phonebook::display_contacts(Contact *contacts, int count)
 	std::cout << std::endl;
 }
 
-
 void Phonebook::get_input(std::string type, Contact *contacts, int index)
 {
 	std::string input;
@@ -98,11 +97,16 @@ void Phonebook::get_input(std::string type, Contact *contacts, int index)
 		if (input.empty())
 		{
 			std::cout << "Invalid Input\n";
-			continue;
+			continue ;
 		}
 		else
 		{
 			skip_spaces(input);
+			if (input.empty())
+			{
+				std::cout << "Empty Input !\n";
+				continue ;
+			}
 			if (type == "First Name")
 				contacts[index].set_fn(input);
 			else if (type == "Last Name")
