@@ -6,13 +6,14 @@
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 11:24:07 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/10 20:49:49 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/14 15:55:06 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <ctime>
 #include <iostream>
+
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -50,7 +51,6 @@ Account::Account(int initial_deposit)
 Account::~Account()
 {
 	this->_displayTimestamp();
-	this
 	std::cout << "index:" << this->_accountIndex << ";"
 				<< "amount:" << this->_amount << ";"
 				<< "closed" << std::endl;

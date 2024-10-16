@@ -16,7 +16,7 @@ $(NAME): $(MAIN) $(OBJS)  $(INCLUDE)
 
 clean:
 	rm -rf $(OBJS)
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
-re : clean all
+re : clean fclean all

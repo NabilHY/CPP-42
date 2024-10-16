@@ -5,7 +5,7 @@ NAME = megaphone
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRCS)
 	$(CPP) $(FLAGS) $(SRCS) -o $(NAME)
 
 clean:
