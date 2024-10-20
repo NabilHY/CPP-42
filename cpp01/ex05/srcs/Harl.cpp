@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 19:39:39 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/17 16:06:45 by nhayoun          ###   ########.fr       */
+/*   Created: 2024/10/20 18:25:54 by nhayoun           #+#    #+#             */
+/*   Updated: 2024/10/20 20:54:01 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "../include/Harl.hpp"
 
-# include <iostream>
-# include <string>
-
-class Zombie
+Harl::Harl()
 {
-  private:
-	std::string name;
 
-  public:
-	Zombie();
-	~Zombie(void);
-	Zombie(std::string name);
-	void announce(void);
-	std::string get_name(); 
-	void set_name(std::string name);
-};
+}
 
-Zombie	*zombieHorde(int N, std::string name);
+Harl::~Harl()
+{
+}
 
-#endif
+void Harl::complain(std::string level)
+{
+	
+	if ()
+}

@@ -6,16 +6,16 @@
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:17:53 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/18 20:50:33 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/19 18:12:56 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/HumanA.hpp"
-#include <iostream>
 
 HumanA::HumanA(std::string name, Weapon &weapon) : name(name), weapon(weapon)
-{
-} // Initialize in initializer list
+{this->weapon = weapon;
+}
+
 HumanA::~HumanA()
 {
 }

@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:17:58 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/18 11:58:27 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/19 11:05:25 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <utility>
 
 class Weapon {
 	private:

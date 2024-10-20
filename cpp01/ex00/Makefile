@@ -4,12 +4,11 @@ SRCS = ./srcs/newZombie.cpp \
 ./srcs/randomChump.cpp \
 ./srcs/Zombie.cpp
 OBJS = $(SRCS:%.cpp=%.o)
-INCLUDE = ./include/Zombie.hpp
+INCLUDE = ./include
 MAIN = main.cpp
 NAME = zombie
 
 all: $(NAME)
-
 
 $(NAME): $(MAIN) $(OBJS) $(INCLUDE)
 	$(CPP) $(FLAGS) -I$(INCLUDE) $(OBJS) $(MAIN) -o $(NAME)

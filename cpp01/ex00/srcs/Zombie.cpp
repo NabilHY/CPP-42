@@ -6,13 +6,13 @@
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:24:49 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/16 13:50:56 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/16 20:55:02 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Zombie.hpp"
 
-// Zombie::Zombie(){}
+Zombie::Zombie(){}
 
 Zombie::Zombie(std::string name)
 {

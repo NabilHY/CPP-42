@@ -5,32 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 11:17:45 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/19 11:06:35 by nhayoun          ###   ########.fr       */
+/*   Created: 2024/10/17 10:53:20 by nhayoun           #+#    #+#             */
+/*   Updated: 2024/10/17 14:57:53 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/HumanA.hpp"
-#include "include/HumanB.hpp"
+#include <iostream>
+#include <string>
 
 int	main(void)
 {
-	Weapon	club;
-
-	{
-		club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
-	}
-	{
-		club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return (0);
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
+	std::cout << "String Variable Address : " << &str << std::endl;
+	std::cout << "Address held in stringPTR: " << stringPTR << std::endl;
+	std::cout << "Address held in stringREF: " << &stringREF << std::endl;
+	std::cout << "String Variable Value : " << str << std::endl;
+	std::cout << "Value pointed by stringPTR : " << *stringPTR << std::endl;
+	std::cout << "Value pointed by stringREF : " << stringREF << std::endl;
 }
