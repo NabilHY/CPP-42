@@ -4,7 +4,7 @@ SRCS = ./srcs/Harl.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 MAIN = main.cpp
 INCLUDE = ./include/Harl.hpp
-NAME = harl
+NAME = harlFilter
 
 all : $(NAME)
 
