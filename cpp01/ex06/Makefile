@@ -12,7 +12,7 @@ all : $(NAME)
 	$(CPP) $(FLAGS) -c $< -o $@
 
 $(NAME): $(MAIN) $(OBJS) $(INCLUDE)
-	$(CPP) $(FLAGS) $(INCLUDE) $(OBJS) $(MAIN) -o $(NAME)
+	$(CPP) $(FLAGS) -I$(INCLUDE) $(OBJS) $(MAIN) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)
