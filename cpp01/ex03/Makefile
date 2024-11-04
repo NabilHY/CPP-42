@@ -10,12 +10,11 @@ NAME = program
 
 all : $(NAME)
 
+%.o:%.cpp
+	$(CPP) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS) $(INCLUDE) $(SRCS) $(MAIN)
 	$(CPP) $(FLAGS) -I$(INCLUDE) $(OBJS) $(MAIN) -o $(NAME)
-
-%.o:%.cpp
-	$(CPP) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS)

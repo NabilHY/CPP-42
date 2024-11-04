@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = ./srcs/Harl.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 MAIN = main.cpp
-INCLUDE = ./include/Harl.hpp
+INCLUDE = include
 NAME = harlFilter
 
 all : $(NAME)
@@ -11,7 +11,8 @@ all : $(NAME)
 %.o:%.cpp
 	$(CPP) $(FLAGS) -c $< -o $@
 
-$(NAME): $(MAIN) $(OBJS) $(INCLUDE)
+
+$(NAME): $(OBJS) $(INCLUDE) $(SRCS) $(MAIN)
 	$(CPP) $(FLAGS) -I$(INCLUDE) $(OBJS) $(MAIN) -o $(NAME)
 
 clean:
