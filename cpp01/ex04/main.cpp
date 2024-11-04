@@ -52,7 +52,7 @@ int	main(int ac, char **av)
 		else
 		{
 			std::string newfile = filename + ".replace";
-			std::ofstream outfile(newfile);
+			std::ofstream outfile(newfile.c_str());
 			if (!outfile.is_open())
 			{
 				std::cout << "Failure" << std::endl;

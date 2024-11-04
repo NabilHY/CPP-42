@@ -33,5 +33,10 @@ void HumanA::set_name(std::string new_name)
 
 void HumanA::attack()
 {
-	std::cout << this->get_name() << " attacks with their " << this->weapon.getType() << std::endl;
+	if (!((this->weapon.getType()).empty() || this->weapon.getType().size() == 0))
+	{
+		std::cout << this->get_name() << " attacks with their " << this->weapon.getType() << std::endl;	
+		return ;
+	}
+	std::cout << this->get_name() << " attacks with his bare hands" << std::endl;
 }
