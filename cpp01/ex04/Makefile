@@ -5,11 +5,11 @@ NAME = cpp_sed
 
 all : $(NAME)
 
-$(NAME):
+$(NAME): $(MAIN)
 	$(CPP) $(FLAGS) $(MAIN) -o $(NAME)
 
 clean:
 	find . -type f ! -name "Makefile" ! -name "*.cpp" -delete
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 re: fclean all

@@ -9,4 +9,5 @@ $(NAME): $(MAIN)
 	$(CPP) $(FLAGS) $(MAIN) -o $(NAME)
 clean:
 	rm -rf $(NAME)
+fclean: clean
 re: clean all

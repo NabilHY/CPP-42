@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:24:49 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/16 20:55:02 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/02 15:01:01 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Zombie.hpp"
+#include "../include/Zombie.hpp"
 
 Zombie::Zombie(){}
 

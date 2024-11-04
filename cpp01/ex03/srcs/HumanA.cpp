@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:17:53 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/21 18:20:35 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/31 22:26:30 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ HumanA::~HumanA()
 {
 }
 
-std::string HumanA::get_name()
+std::string const HumanA::get_name() const
 {
 	return (this->name);
 }

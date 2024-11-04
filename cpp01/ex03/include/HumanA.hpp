@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhayoun <nhayoun@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:18:03 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/10/19 13:13:21 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/10/31 21:57:37 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class HumanA
 	  ~HumanA();
 	  HumanA(std::string name, Weapon &weapon);
 	  void attack();
-	  std::string get_name();
+	  const std::string  get_name() const;
 	  void set_name(std::string new_name);
 };
 
