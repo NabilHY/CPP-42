@@ -6,9 +6,12 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:53:41 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/10 13:37:06 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/11 13:48:01 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <fstream>
@@ -39,10 +42,10 @@ class Fixed {
         bool    operator <=(const Fixed &ref) const;
         bool    operator ==(const Fixed &ref) const;
         bool    operator !=(const Fixed &ref) const;
-        float   operator ++();
-        float   operator --();
-        float   operator ++(int);
-        float   operator --(int);
+        Fixed   operator ++();
+        Fixed   operator --();
+        Fixed   operator ++(int);
+        Fixed   operator --(int);
         static  const   Fixed   &min(const Fixed&, const Fixed&);
         static  const   Fixed   &min(Fixed&, Fixed&);
         static  const   Fixed   &max(const Fixed&, const Fixed&);
@@ -55,3 +58,6 @@ std::ostream& operator << (std::ostream &COUT, const Fixed& ref);
     // TAKES AS PARAMETERS TWO REFERENCES ON FIXED POINT NUMBERS
         // RETURNS REFERENCE TO THE SMALLEST ONE
     // TAKES AS PARAMETRS TWO REFERECES TO CONSTANT FIXED-NUMBERS
+    
+
+#endif

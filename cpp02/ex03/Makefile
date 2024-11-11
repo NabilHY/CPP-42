@@ -1,6 +1,6 @@
 CPP = c++
 FLAGS = -std=c++98 -Wall -Wextra -Werror
-SRCS = ./srcs/Fixed.cpp
+SRCS = ./srcs/Fixed.cpp ./srcs/Point.cpp
 MAIN = main.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 INCLUDE = ./include
