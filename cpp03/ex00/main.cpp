@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 11:53:41 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/11 13:47:06 by nhayoun          ###   ########.fr       */
+/*   Created: 2024/11/13 19:31:26 by nhayoun           #+#    #+#             */
+/*   Updated: 2024/11/16 14:48:53 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "./include/ClapTrap.hpp"
 
-#include <iostream>
-
-class Fixed {
-    private:
-        int FixVal;
-        static const int literal = 8;
-    public:
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed& origin);
-        Fixed& operator =(const Fixed& origin);
-        int     getRawBits( void )const;
-        void    setRawBits(int const raw);
-};
-
-#endif
+int main() {
+    ClapTrap autobot("Optimus Prime");
+    autobot.beRepaired(1);
+    autobot.takeDamage(5);
+    autobot.takeDamage(2);
+    autobot.beRepaired(1);
+    autobot.takeDamage(5);
+    autobot.attack("Magetoron");
+    autobot.takeDamage(10);
+    autobot.takeDamage(1);
+    return 0;
+}

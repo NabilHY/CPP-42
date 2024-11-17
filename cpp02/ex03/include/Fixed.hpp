@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:53:41 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/11 13:48:01 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/12 13:50:46 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Fixed {
         static  const   Fixed   &max(const Fixed&, const Fixed&);
         static  const   Fixed   &max(Fixed&, Fixed&);
 };
-
+//!
 std::ostream& operator << (std::ostream &COUT, const Fixed& ref);
 
 // min 

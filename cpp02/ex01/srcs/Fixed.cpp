@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:53:57 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/10 09:15:27 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/11 19:58:40 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ void Fixed::setRawBits(int const raw){
     FixVal = raw;
 }
 
-float   Fixed::toFloat(void) const{
+float   Fixed::toFloat(void) const {
     return (static_cast<float>(FixVal) / (1 << literal));
 }
 
-int   Fixed::toInt(void) const{
+int   Fixed::toInt(void) const {
     return (FixVal >> literal);
 }
 
-int Fixed::getRawBits() const{
+int Fixed::getRawBits() const {
     std::cout << "getRawBits member function called" << std::endl;
     return (FixVal);
 }
@@ -62,6 +62,3 @@ std::ostream& operator << (std::ostream &COUT, const Fixed& ref) {
     COUT << ref.toFloat();
     return COUT;
 }
-
-// To go from an int to a fixed point 
-    // 

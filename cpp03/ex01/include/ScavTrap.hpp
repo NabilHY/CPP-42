@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 11:53:41 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/11 13:47:06 by nhayoun          ###   ########.fr       */
+/*   Created: 2024/11/16 15:15:24 by nhayoun           #+#    #+#             */
+/*   Updated: 2024/11/16 20:38:45 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#include <iostream>
+#include "../include/ClapTrap.hpp"
 
-class Fixed {
-    private:
-        int FixVal;
-        static const int literal = 8;
+class ScavTrap : public ClapTrap {
     public:
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed& origin);
-        Fixed& operator =(const Fixed& origin);
-        int     getRawBits( void )const;
-        void    setRawBits(int const raw);
+        ScavTrap(const std::string &name);
+        void   attack(const std::string &target) {
+            std::cout << "ScavTrap " << this->Name << " attacks " << target << ", causing " << this->AttackDamage << " Points of damage\n";
+        }
+        void    guardGate(void);
 };
 
 #endif

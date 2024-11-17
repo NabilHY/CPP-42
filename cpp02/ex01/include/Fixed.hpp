@@ -6,9 +6,12 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:53:41 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/09 20:23:38 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/11 13:46:45 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <fstream>
@@ -32,3 +35,5 @@ class Fixed {
 };
 
 std::ostream& operator << (std::ostream &COUT, const Fixed& ref);
+
+#endif

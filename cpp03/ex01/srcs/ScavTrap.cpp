@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 11:53:41 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/11 13:47:06 by nhayoun          ###   ########.fr       */
+/*   Created: 2024/11/16 15:15:34 by nhayoun           #+#    #+#             */
+/*   Updated: 2024/11/16 20:40:45 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "../include/ScavTrap.hpp"
 
-#include <iostream>
-
-class Fixed {
-    private:
-        int FixVal;
-        static const int literal = 8;
-    public:
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed& origin);
-        Fixed& operator =(const Fixed& origin);
-        int     getRawBits( void )const;
-        void    setRawBits(int const raw);
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
+{
+    std::cout << "ScavTrap Spawns\n";
 };
 
-#endif
+void    ScavTrap::guardGate() { std::cout << this->Name << " is now in Gate keeper mode.\n";};
