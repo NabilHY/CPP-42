@@ -6,27 +6,22 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:31:26 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/20 02:21:48 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/22 15:31:44 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/ScavTrap.hpp"
+#include "include/DiamondTrap.hpp"
 
-int main() {
-    
-    ClapTrap *scav = new ScavTrap("scavtrap");
-    delete scav;
-    return 0;
+#include "DiamondTrap.hpp"
+
+int main()
+{
+		DiamondTrap b("Giga Chadd");
+
+		b.whoAmI();
+		b.attack("Chadd-clone");
+		// std::cout << b.HitPoints << std::endl;
+		// std::cout << b.EnergyPoints << std::endl;
+		// std::cout << b.AttackDamage << std::endl;
+	return (0);
 }
-
-    /*ScavTrap scav1("Guardian");
-    scav1.attack("Enemy1");
-    scav1.takeDamage(80);
-    scav1.beRepaired(50);
-    scav1.guardGate();
-    scav1.guardGate();
-    ScavTrap scav2 = scav1;
-    scav2.attack("Enemy2");
-    ScavTrap scav3("Temporary");
-    scav3 = scav1;
-    scav3.takeDamage(60);*/

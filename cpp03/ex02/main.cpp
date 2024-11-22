@@ -6,27 +6,25 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:31:26 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/20 02:21:48 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/19 20:59:40 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/ScavTrap.hpp"
+#include <iostream>
+#include "FragTrap.hpp"
 
 int main() {
-    
-    ClapTrap *scav = new ScavTrap("scavtrap");
-    delete scav;
+    FragTrap frag1("Warrior");
+    frag1.attack("EnemyBot");
+    frag1.takeDamage(40);
+    frag1.beRepaired(30);
+    frag1.attack("EnemyBot");
+    FragTrap frag2 = frag1;
+    frag2.attack("AnotherEnemy");
+    FragTrap frag3("TemporaryBot");
+    frag3 = frag1;
+    frag3.takeDamage(60);
+    frag1.highFivesGuys();
+    frag1.highFivesGuys();
     return 0;
 }
-
-    /*ScavTrap scav1("Guardian");
-    scav1.attack("Enemy1");
-    scav1.takeDamage(80);
-    scav1.beRepaired(50);
-    scav1.guardGate();
-    scav1.guardGate();
-    ScavTrap scav2 = scav1;
-    scav2.attack("Enemy2");
-    ScavTrap scav3("Temporary");
-    scav3 = scav1;
-    scav3.takeDamage(60);*/

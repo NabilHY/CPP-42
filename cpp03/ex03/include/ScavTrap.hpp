@@ -6,16 +6,16 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:15:24 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/20 02:31:04 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/22 13:27:49 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
-#include "../include/ClapTrap.hpp"
+#include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
     private:
         bool guarding;
     public:

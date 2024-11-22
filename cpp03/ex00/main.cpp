@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:31:26 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/16 14:48:53 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/19 16:44:27 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int main() {
     ClapTrap autobot("Optimus Prime");
+    autobot.takeDamage(8);
+    autobot.beRepaired(4);
+    autobot.beRepaired(4);
     autobot.beRepaired(1);
     autobot.takeDamage(5);
     autobot.takeDamage(2);
