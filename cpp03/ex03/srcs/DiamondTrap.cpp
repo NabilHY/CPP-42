@@ -35,11 +35,9 @@ DiamondTrap::~DiamondTrap(){
     std::cout << "DiamondTrap Outta Here\n";
 };
 
-DiamondTrap::DiamondTrap(const DiamondTrap &ref){
+DiamondTrap::DiamondTrap(const DiamondTrap &ref) 
+    : ClapTrap(ref), ScavTrap(ref), FragTrap(ref) {
     this->Name = ref.Name;
-    this->HitPoints = ref.HitPoints;
-    this->EnergyPoints = ref.EnergyPoints;
-    this->AttackDamage = ref.AttackDamage;
 }
 
 DiamondTrap&    DiamondTrap::operator=(const DiamondTrap& ref){
