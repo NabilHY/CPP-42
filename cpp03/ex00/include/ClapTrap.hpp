@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:31:24 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/19 16:06:09 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 14:06:26 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class   ClapTrap {
         ClapTrap(std::string Name);
         ClapTrap(const ClapTrap &);
         ClapTrap& operator = (const ClapTrap &);
-        void    reduceHealth(int value);
         void    attack(const std::string &);
         void    takeDamage(unsigned int);
         void    beRepaired(unsigned int);
