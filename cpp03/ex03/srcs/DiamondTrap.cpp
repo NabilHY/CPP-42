@@ -6,13 +6,13 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 21:10:58 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/23 14:12:27 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 22:51:55 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(), Name("Stupid DiamondTrap") { std::cout << "DiamondTrap Default Constructor\n" };
+DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(), Name("Stupid DiamondTrap") { std::cout << "DiamondTrap Default Constructor\n"; };
 
 DiamondTrap::DiamondTrap(const std::string &name)
     : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name) {
@@ -26,7 +26,7 @@ DiamondTrap::~DiamondTrap(){
     std::cout << "DiamondTrap Outta Here\n";
 };
 
-DiamondTrap::DiamondTrap(const DiamondTrap &ref) 
+DiamondTrap::DiamondTrap(const DiamondTrap &ref)
     : ClapTrap(ref), ScavTrap(ref), FragTrap(ref) {
     this->Name = ref.Name;
 }

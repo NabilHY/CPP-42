@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:48:10 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/23 12:22:56 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 22:25:48 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {HitPoints = 100;En
 
 ScavTrap::~ScavTrap() {std::cout << "ScavTrap Outta here\n";};
 
-ScavTrap::ScavTrap(const ScavTrap& ref) : ClapTrap(ref.Name) { HitPoints = ref.HitPoints; EnergyPoints = ref.EnergyPoints; AttackDamage = ref.AttackDamage; };
+ScavTrap::ScavTrap(const ScavTrap& ref) : ClapTrap(ref.Name) { HitPoints = ref.HitPoints; EnergyPoints = ref.EnergyPoints; AttackDamage = ref.AttackDamage; guarding = ref.guarding; };
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& ref){ std::cout << "Assignment Operator\n"; if (this == &ref) return *this; ClapTrap::operator=(ref); this->Name = ref.Name; this->HitPoints = ref.HitPoints; this->EnergyPoints = ref.EnergyPoints; this->AttackDamage = ref.AttackDamage; return *this;};
 
