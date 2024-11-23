@@ -6,13 +6,13 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:48:10 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/22 15:05:13 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 12:23:08 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/FragTrap.hpp"
 
-FragTrap::FragTrap() { std::cout << "Stupid FragTrap Created\n"; };
+FragTrap::FragTrap() { HitPoints = 100;EnergyPoints = 100; AttackDamage = 30;  highFive = false; std::cout << "Stupid FragTrap Created\n"; };
 
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {HitPoints = 100;EnergyPoints = 100; AttackDamage = 30;  highFive = false; std::cout << "FragTrap Created\n"; };
 

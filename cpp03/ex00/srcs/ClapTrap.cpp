@@ -6,18 +6,18 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:31:22 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/20 02:40:11 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 11:41:17 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {Name = "Stupid Robot"; HitPoints = 10; EnergyPoints = 10; AttackDamage = 0;};
+ClapTrap::ClapTrap() {Name = "Stupid Robot"; HitPoints = 10; EnergyPoints = 10; AttackDamage = 0; std::cout << "ClapTrap Default Constructor\n";};
 ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(10) { std::cout << "ClapTrap Created\n"; };
 ClapTrap::~ClapTrap(){ std::cout << "ClapTrap Outta here!\n"; };
 ClapTrap::ClapTrap(const ClapTrap &ref)
-    : Name(ref.Name), HitPoints(ref.HitPoints), EnergyPoints(ref.EnergyPoints), AttackDamage(ref.AttackDamage){};
-ClapTrap &ClapTrap::operator = (const ClapTrap &ref){if (this != &ref){this->Name = ref.Name; this->HitPoints = ref.HitPoints; this->EnergyPoints = ref.EnergyPoints; this->AttackDamage = ref.AttackDamage;} return *this;};
+    : Name(ref.Name), HitPoints(ref.HitPoints), EnergyPoints(ref.EnergyPoints), AttackDamage(ref.AttackDamage){std::cout << "ClapTrap Copy Constructor!\n";};
+ClapTrap &ClapTrap::operator = (const ClapTrap &ref){if (this != &ref){std::cout << "ClapTrap Copy Assignment Operator!\n";this->Name = ref.Name; this->HitPoints = ref.HitPoints; this->EnergyPoints = ref.EnergyPoints; this->AttackDamage = ref.AttackDamage;} return *this;};
 void    ClapTrap::attack(const std::string &target) {
     std::cout << "=== ATTACK ===" << std::endl;
     if (this->HitPoints <= 0) std::cout << this->Name << " cannot attack because he's Finished!" << std::endl;

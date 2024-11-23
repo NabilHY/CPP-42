@@ -6,15 +6,15 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 19:31:22 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/20 15:33:07 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 11:48:52 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {Name = ""; HitPoints = 10; EnergyPoints = 10; AttackDamage = 0;};
+ClapTrap::ClapTrap() {Name = "NONAME"; HitPoints = 10; EnergyPoints = 10; AttackDamage = 0; std::cout << "ClapTrap Default Constructor\n";};
 
-ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(10) {}
+ClapTrap::ClapTrap(std::string name) : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(10) {std::cout << "ClapTrap Constructor\n";}
 
 ClapTrap::~ClapTrap(){ std::cout << "ClapTrap Outta here!\n"; };
 

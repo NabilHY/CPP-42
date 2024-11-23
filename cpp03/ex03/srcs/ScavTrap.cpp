@@ -6,13 +6,13 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:48:10 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/22 12:30:31 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 12:22:56 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScavTrap.hpp"
 
-ScavTrap::ScavTrap() { std::cout << "Stupid ScavTrap Created\n"; };
+ScavTrap::ScavTrap() {HitPoints = 100;EnergyPoints = 50;AttackDamage = 20; guarding = false; std::cout << "Stupid ScavTrap Created\n"; };
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {HitPoints = 100;EnergyPoints = 50;AttackDamage = 20; guarding = false; std::cout << "ScavTrap Created\n"; };
 

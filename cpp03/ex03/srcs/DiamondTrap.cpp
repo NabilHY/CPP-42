@@ -6,22 +6,13 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 21:10:58 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/22 15:39:39 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 12:25:03 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-    Creating diamondTrap
-        DiamondTrap inherits both From Scav/Frag themselves inherit from Clap
-    Key requirements :
-        -> Name Attribute: 
-            - DiamondTrap has private attribute named same as ClapTrap
-            - This dual inherritace structure may lead to ambiguity or shadowing due to multiple inheritance of claptrap
-*/
-
 #include "../include/DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(), Name("Stupid DiamondTrap") {};
+DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(), Name("Stupid DiamondTrap") { };
 
 DiamondTrap::DiamondTrap(const std::string &name)
     : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name) {
@@ -58,4 +49,5 @@ void    DiamondTrap::attack(const std::string &name)
 void    DiamondTrap::whoAmI()
 {
     std::cout << "I'm A Diamond Trap and my name is " << this->Name << std::endl;
+    std::cout << "And my ClapTap name is " << ClapTrap::Name << std::endl;
 }
