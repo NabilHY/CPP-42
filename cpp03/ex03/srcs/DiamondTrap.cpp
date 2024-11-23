@@ -6,13 +6,13 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 21:10:58 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/23 12:25:03 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/23 14:12:27 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(), Name("Stupid DiamondTrap") { };
+DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(), Name("Stupid DiamondTrap") { std::cout << "DiamondTrap Default Constructor\n" };
 
 DiamondTrap::DiamondTrap(const std::string &name)
     : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name) {
