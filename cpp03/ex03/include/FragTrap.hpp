@@ -6,7 +6,7 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:15:24 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/22 15:02:33 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/24 13:25:08 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class FragTrap : virtual public ClapTrap {
         FragTrap& operator = (const FragTrap &);
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
-        void    highFiveGuys(void);
+        void    highFivesGuys(void);
         void    attack(const std::string &target);
 };
 

@@ -6,21 +6,21 @@
 /*   By: nhayoun <nhayoun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:48:10 by nhayoun           #+#    #+#             */
-/*   Updated: 2024/11/23 22:25:48 by nhayoun          ###   ########.fr       */
+/*   Updated: 2024/11/24 15:28:25 by nhayoun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {HitPoints = 100;EnergyPoints = 50;AttackDamage = 20; guarding = false; std::cout << "Stupid ScavTrap Created\n"; };
+ScavTrap::ScavTrap() : ClapTrap() {Name="Stupid ScavTrap\n" ; HitPoints = 100; EnergyPoints = 50; AttackDamage = 20; guarding = false; std::cout << "ScavTrap Default Constructor\n";};
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {HitPoints = 100;EnergyPoints = 50;AttackDamage = 20; guarding = false; std::cout << "ScavTrap Created\n"; };
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {Name = name; HitPoints = 100;EnergyPoints = 50;AttackDamage = 20; guarding = false; std::cout << "ScavTrap Parameterized Constructor\n"; };
 
-ScavTrap::~ScavTrap() {std::cout << "ScavTrap Outta here\n";};
+ScavTrap::~ScavTrap() {std::cout << "ScavTrap Deconstructor\n";};
 
-ScavTrap::ScavTrap(const ScavTrap& ref) : ClapTrap(ref.Name) { HitPoints = ref.HitPoints; EnergyPoints = ref.EnergyPoints; AttackDamage = ref.AttackDamage; guarding = ref.guarding; };
+ScavTrap::ScavTrap(const ScavTrap& ref) : ClapTrap(ref.Name) {std::cout << "ScavTrap Copy Constructor\n"; Name = ref.Name; HitPoints = ref.HitPoints; EnergyPoints = ref.EnergyPoints; AttackDamage = ref.AttackDamage; guarding = ref.guarding; };
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& ref){ std::cout << "Assignment Operator\n"; if (this == &ref) return *this; ClapTrap::operator=(ref); this->Name = ref.Name; this->HitPoints = ref.HitPoints; this->EnergyPoints = ref.EnergyPoints; this->AttackDamage = ref.AttackDamage; return *this;};
+ScavTrap& ScavTrap::operator=(const ScavTrap& ref){std::cout << "ScavTrap Copy Assignment Operator\n"; if (this == &ref) return *this; ClapTrap::operator=(ref); this->Name = ref.Name; this->HitPoints = ref.HitPoints; this->EnergyPoints = ref.EnergyPoints; this->AttackDamage = ref.AttackDamage; this->guarding = ref.guarding; return *this;};
 
 void    ScavTrap::attack(const std::string &target) {
     std::cout << "=== ATTACK ===" << std::endl;
