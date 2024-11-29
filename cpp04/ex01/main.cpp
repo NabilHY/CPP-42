@@ -19,9 +19,9 @@ int main()
     }
     for (int i = 0; i < 4; i++)
         delete animals[i];
+    /* Deep Copy Checks */
     Cat *kitty = new Cat();
     Cat *whiskers = new Cat();
-    /* Deep Copy Checks */
     kitty->set_idea("Chase mice", 0);
     kitty->set_idea("Climb trees", 1);
     kitty->set_idea("Nap in the sun", 2);
@@ -34,7 +34,7 @@ int main()
     curious_cat.print_ideas();
     std::cout << "=== Destruction ===\n";
     delete kitty;
-    delete whiskers;
+    delete whiskers; 
 };
 
     /*Dog *doggo = new Dog();
