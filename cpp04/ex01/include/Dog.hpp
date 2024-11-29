@@ -7,7 +7,7 @@
 class Dog : public Animal
 {
 	private:
-		Brain *ideas;
+		Brain *brain;
 	public:
 		Dog();
 		Dog( Dog const &);
@@ -15,6 +15,9 @@ class Dog : public Animal
 		Dog &operator=( Dog const &);
 		void    makeSound() const;
 		std::string    getType() const;
+		void set_idea(std::string idea, int index);
+		std::string get_idea(int index) const;
+		void print_ideas();
 };
 
 #endif
