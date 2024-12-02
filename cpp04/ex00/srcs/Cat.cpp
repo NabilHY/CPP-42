@@ -2,7 +2,7 @@
 
 Cat::Cat() : Animal("Cat") { std::cout << "Cat Default constructor\n"; };
 
-Cat::Cat( const Cat & ref ){ std::cout << "Cat Copy Constructor\n"; _type = ref._type; };
+Cat::Cat( const Cat & ref ) { std::cout << "Cat Copy Constructor\n"; _type = ref._type; };
 
 Cat::~Cat() { std::cout << "Cat Deconstructor\n";};
 
