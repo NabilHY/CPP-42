@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string.h>
+#include <string>
 #include <iostream>
 
 class Bureaucrat {
@@ -8,6 +8,7 @@ class Bureaucrat {
         const std::string _name;
         int _grade;
     public:
+        Bureaucrat();
         Bureaucrat(const std::string&, int);
         ~Bureaucrat();
         Bureaucrat(const Bureaucrat &);
@@ -16,18 +17,14 @@ class Bureaucrat {
         int     getGrade() const;
         void    incrementGrade();
         void    decrementGrade();
-};
-
-class GradeTooHighException : public std::exception {
-    public:
-        GradeTooHighException();
-        const char * what() const throw();
-};
-
-class GradeTooLowException : public std::exception {
-    public:
-        GradeTooLowException();
-        const char * what() const throw();
+        class GradeTooHighException : public std::exception {
+            public:
+                const char * what() const throw();
+        };
+        class GradeTooLowException : public std::exception {
+            public:
+                const char * what() const throw();
+        };
 };
 
 std::ostream& operator<<(std::ostream &COUT, const Bureaucrat& ref);
