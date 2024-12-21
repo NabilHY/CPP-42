@@ -31,7 +31,7 @@ void    ShrubberyCreationForm::execute(Bureaucrat const  &bureaucrat) const {
         throw GradeTooLowException();
     if (!getSign())
         throw FormNotSigned();
-    std::ofstream shrubb(_target+"_shrubbery");
+    std::ofstream shrubb((_target + "_shrubbery").c_str());
     shrubb << "       ###" << std::endl;
     shrubb << "      #o###" << std::endl;
     shrubb << "    #####o###" << std::endl;

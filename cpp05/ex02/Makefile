@@ -5,6 +5,7 @@ srcs/AForm.cpp \
 srcs/ShrubberyCreationForm.cpp \
 srcs/RobotomyRequestForm.cpp \
 srcs/PresidentialPardonForm.cpp
+INCLUDE = ./include
 OBJS = $(SRCS:%.cpp=%.o)
 MAIN = main.cpp
 NAME = forms
@@ -13,7 +14,7 @@ NAME = forms
 all: $(NAME)
 
 $(NAME): $(OBJS) $(MAIN) $(INCLUDE)
-	$(CPP) $(FLAGS) $(OBJS) $(MAIN) -o $(NAME)
+	$(CPP) $(FLAGS) -I$(INCLUDE) $(OBJS) $(MAIN) -o $(NAME)
 
 %.o:%.cpp
 	$(CPP) $(FLAGS) -c $< -o $@

@@ -2,6 +2,7 @@ CPP = c++
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 SRCS = Bureaucrat.cpp \
 Form.cpp
+INCLUDE = .
 OBJS = $(SRCS:%.cpp=%.o)
 MAIN = main.cpp
 NAME = forms
@@ -9,7 +10,7 @@ NAME = forms
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(MAIN) $(INCLUDE)
+$(NAME): $(OBJS) $(INCLUDE) $(MAIN) $(INCLUDE)
 	$(CPP) $(FLAGS) $(OBJS) $(MAIN) -o $(NAME)
 
 %.o:%.cpp

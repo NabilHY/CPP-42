@@ -1,5 +1,6 @@
 #include "../include/RobotomyRequestForm.hpp"
 #include <cstdlib>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm() 
     : AForm("Robotomy Request Form", 72, 45), _target("Target") {
