@@ -4,7 +4,8 @@ SRCS = srcs/Bureaucrat.cpp \
 srcs/AForm.cpp \
 srcs/ShrubberyCreationForm.cpp \
 srcs/RobotomyRequestForm.cpp \
-srcs/PresidentialPardonForm.cpp
+srcs/PresidentialPardonForm.cpp \
+srcs/Intern.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 MAIN = main.cpp
 NAME = forms
