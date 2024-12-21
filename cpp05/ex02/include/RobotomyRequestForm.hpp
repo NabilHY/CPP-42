@@ -1,3 +1,5 @@
+#pragma once
+
 #include <fstream>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"

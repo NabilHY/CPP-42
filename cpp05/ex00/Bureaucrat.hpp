@@ -25,6 +25,6 @@ class Bureaucrat {
             public:
                 const char * what() const throw();
         };
-};
+};  
 
 std::ostream& operator<<(std::ostream &COUT, const Bureaucrat& ref);

@@ -32,14 +32,13 @@ const char  * RobotomyRequestForm::RobotomyRequestFailure::what() const throw ()
 }
 
 void    RobotomyRequestForm::execute(Bureaucrat const  &bureaucrat) const {
-    if (bureaucrat.getGrade() > _grade_to_sign)
-        throw GradeTooLowException();
     if (!getSign())
         throw FormNotSigned();
+    if (bureaucrat.getGrade() > getExecGrade())
+        throw GradeTooLowException();
     std::cout << "Drilling Noises .......\n";
     std::srand(std::time(0));
-    int randomNum = rand() % 10;
-    // std::cout << randomNum;
+    int randomNum = std::rand() % 10;
     if (randomNum % 2)
         throw RobotomyRequestFailure();
     std::cout << "Robotmization of " << _target << " Completed Successefully\n";
