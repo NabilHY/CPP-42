@@ -36,14 +36,10 @@ AForm*  Intern::formSearch(std::string &name, std::string &target) {
         "presidential pardon",
         "robotomy request"
     };
-    AForm* (*formCreator[])(const std::string&) = {
-        Intern::createShrubbery,
-        Intern::createPardon,
-        Intern::createRoboto
-    };
+    AForm* (Intern::*formCreator[])(const std::string&) = { &Intern::createShrubbery, &Intern::createPardon, &Intern::createRoboto};
     for (int i = 0; i < 3; i++) {
         if (name == forms[i])
-            return (formCreator[i](target));
+            return ((this->*formCreator[i])(target));
     }
     throw FormNotFound();
 }
