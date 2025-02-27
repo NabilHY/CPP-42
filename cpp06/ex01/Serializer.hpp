@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <cstdint>
 
 struct Data {
     std::string login;
@@ -9,10 +10,11 @@ struct Data {
 
 class Serializer {
     private:
-        virtual uintptr_t serialize(Data * ptr);
         Serializer();
         ~Serializer();
         Serializer(const Serializer &rhs);
         Serializer &operator=(Serializer &rhs);
-
+    public:
+        static uintptr_t serialize(Data * ptr);
+        static Data *deserialize(uintptr_t raw);
 };

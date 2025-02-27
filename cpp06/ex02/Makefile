@@ -1,10 +1,10 @@
 CPP=c++
-FLAGS= -Wall -Wextra -Werror -std=c++11
+FLAGS= -Wall -Wextra -Werror -std=c++98
 MAIN=main.cpp
-SRCS=Serializer.cpp
+SRCS=Base.cpp
 OBJS=$(SRCS:%.cpp=%.o)
 INCLUDE=.
-NAME=serialize
+NAME=base
 
 all: $(NAME)
 
