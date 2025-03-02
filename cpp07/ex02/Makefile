@@ -13,9 +13,6 @@ $(NAME): $(OBJS) $(MAIN) $(INCLUDE)
 %.o:%.cpp
 	$(CPP) $(FLAGS) -c $< -o $@
 
-clean:
-	rm -rf $(OBJS)
-
 fclean: clean
 	rm -rf $(NAME)
 re: fclean all
