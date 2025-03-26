@@ -1,33 +1,34 @@
 #include "Pmerge.hpp"
 
+void processTime(double timeTaken, size_t size) {
+    std::cout << "Time to process a range of " << size << " elements with std::vector : " << std::fixed << timeTaken << " us" << std::endl;
+}
+
 int main(int ac, char **av) {
     try {
 
         std::vector<unsigned int> integersVector;
         Pmerge::earlyValidation(ac, av, integersVector);
-
-
-        /* Start Count */
-        clock_t start = clock();
-        std::cout << "Before: ";
-        Pmerge::printContainer(integersVector);
-        std::vector<unsigned int> sortedIntegersVector = Pmerge::startVectorSort(integersVector);
-        clock_t end = clock();
-        double time_taken = ((double)(end - start) / CLOCKS_PER_SEC);
-        std::cout << "Time to process a range of " << integersVector.size() << "elements with std::vector : " << std::fixed << time_taken << std::endl;
-
+        std::vector<unsigned int> unsortedVector(integersVector.begin(), integersVector.end());
         std::deque<unsigned int> integersDeque(integersVector.begin(), integersVector.end());
-
+        
         /* Start Count */
-        start = clock();
+        clock_t vectorStart = clock();
+        std::vector<unsigned int> sortedIntegersVector = Pmerge::startVectorSort(integersVector);
+        clock_t vectorEnd = clock();
+        
+        /* Start Count */
+        clock_t dequeStart = clock();
         std::deque<unsigned int> sortedIntegersDeque = Pmerge::startDequeSort(integersDeque);
-        end = clock();
-        time_taken = ((double)(end - start) / CLOCKS_PER_SEC);
-        std::cout << "Time to process a range of " << integersDeque.size() << "elements with std::deque : " << std::fixed << time_taken << std::endl;
-
-
+        clock_t dequeEnd = clock();
+        
+        
+        std::cout << "Before: ";
+        Pmerge::printContainer(unsortedVector);
         std::cout << "After: ";
         Pmerge::printContainer(sortedIntegersVector);
+        processTime((double)(vectorEnd - vectorStart) / CLOCKS_PER_SEC, integersVector.size());
+        processTime((double)(dequeEnd - dequeStart) / CLOCKS_PER_SEC, integersVector.size());
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
