@@ -2,6 +2,11 @@
 
 std::map<std::string, double> BitcoinExchange::db;
 
+BitcoinExchange::BitcoinExchange() {};
+BitcoinExchange::~BitcoinExchange() {};
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &rhs) { *this = rhs; };
+BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange &rhs) { (void)rhs; return *this; };
+
 const char * BitcoinExchange::InvalidArgument::what() const throw () {
     return "Error: could not open file.";
 };
@@ -96,7 +101,3 @@ void    BitcoinExchange::btc(int ac, char **av) {
         throw BitcoinExchange::InvalidArgument();
     }
 };
-
-/*
-    Using std::map 
-*/

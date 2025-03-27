@@ -3,6 +3,22 @@
 std::string Line::date;
 std::string Line::value;
 
+Line::Line() {}
+
+Line::~Line() {}
+
+Line::Line(const Line &rhs) {
+    *this = rhs;
+}
+
+Line &Line::operator=(const Line &rhs) {
+    if (this != &rhs) {
+        Line::date = rhs.date;
+        Line::value = rhs.value;
+    }
+    return *this;
+}
+
 size_t Line::digitsAfterDecimal(const std::string &str) {
     size_t decimalPos = str.find('.');
     if (decimalPos != std::string::npos) {
@@ -64,6 +80,7 @@ Line::Line(std::string line) {
     setDay(year, month, day);
     setValue(val);
 }
+
 void Line::setValue(int value) {
     if (value < 0) {
         throw Line::NegativeVal();

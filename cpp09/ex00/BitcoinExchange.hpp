@@ -6,6 +6,10 @@ class BitcoinExchange {
     private:
         static std::map<std::string, double> db;
     public:
+        BitcoinExchange();
+        ~BitcoinExchange();
+        BitcoinExchange(const BitcoinExchange &rhs);
+        BitcoinExchange &operator=(const BitcoinExchange &rhs);
         static  void    printExchangeRate(const std::string &date, const std::string &value, double rate);
         static  void    btc(int ac, char **av);
         static  void    findExchangeRate(const std::string &, const std::string &);

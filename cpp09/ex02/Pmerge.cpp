@@ -1,9 +1,9 @@
 #include "Pmerge.hpp"
 
-Pmerge::Pmerge() {}
-// Pmerge::~Pmerge() {};
-// Pmerge::Pmerge(const Pmerge &rhs) { *this = rhs; };
-// Pmerge & Pmerge::operator=(const Pmerge &rhs) { (void)rhs; return *this; };
+Pmerge::Pmerge() {};
+Pmerge::~Pmerge() {};
+Pmerge::Pmerge(const Pmerge &rhs) { *this = rhs; };
+Pmerge & Pmerge::operator=(const Pmerge &rhs) { (void)rhs; return *this; };
 
 const char * Pmerge::IncorrectArgs::what() const throw() {
     return "Input error: Pmerge criteria not matched!";
@@ -24,9 +24,8 @@ std::vector<std::string> Pmerge::splitString(const std::string& input) {
 
 bool Pmerge::isPositiveNumber(const std::string& str) {
     size_t i = 0;
-    if (str.empty()) {
+    if (str.empty())
         return false;
-    }
     if (str[0] == '+')
         i++;
     for (; i < str.length(); i++) {
@@ -352,7 +351,7 @@ void    Pmerge::startPairing(std::vector<unsigned int> &vec, std::vector<unsigne
     
     std::vector<unsigned int>::iterator it;
 
-    for (it = vec.begin(); it < vec.end(); it += 2){
+    for (it = vec.begin(); it < vec.end(); it += 2) {
         int first = *it;
         int second = *(it + 1);
         l.push_back(std::max(first, second));

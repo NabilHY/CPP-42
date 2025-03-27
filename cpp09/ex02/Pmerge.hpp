@@ -45,9 +45,9 @@
 class Pmerge {
     public:
         Pmerge();
-        // ~Pmerge();
-        // Pmerge(const Pmerge &rhs);
-        // Pmerge & operator=(const Pmerge &rhs);
+        ~Pmerge();
+        Pmerge(const Pmerge &rhs);
+        Pmerge & operator=(const Pmerge &rhs);
         static bool isPositiveNumber(const std::string& );
         static void parseAndValidateInput(const std::string& input, std::vector<unsigned int>&);
         static std::vector<std::string> splitString(const std::string& );

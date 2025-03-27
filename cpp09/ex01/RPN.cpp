@@ -30,9 +30,8 @@ bool RPN::spacingValidation(std::string input) {
 
     for (size_t i = 0; i < input.length(); i++) {
         if (input[i] != ' ') {
-            if (lastWasChar) {
+            if (lastWasChar)
                 return false; 
-            }
             lastWasChar = true;
         } else {
             lastWasChar = false;
@@ -68,7 +67,7 @@ void   RPN::earlyValidation(int ac, char **av) {
 
 
 void    RPN::startCalc(const std::string &input) {
-    std::stack<int> operands;
+    std::stack<double> operands;
     for (size_t i = 0 ; i < input.length(); i++) {
         if (isOperator(input[i]) && operands.size() <= 1)
             throw RPN::InvalidExpression();
@@ -76,9 +75,9 @@ void    RPN::startCalc(const std::string &input) {
             operands.push(input[i] - '0');
         } else if (isOperator(input[i])) {
             /* op2 op op1 */
-            int op1 = operands.top(); operands.pop();
-            int op2 = operands.top(); operands.pop();
-            if (input[i] == '/' && op2 == 0)
+            double op1 = operands.top(); operands.pop();
+            double op2 = operands.top(); operands.pop();
+            if (input[i] == '/' && op1 == 0)
                 throw std::runtime_error("Error: Division by zero");
             switch(input[i]) {
                 case '+': operands.push(op2 + op1); break;
