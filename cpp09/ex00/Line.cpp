@@ -3,6 +3,16 @@
 std::string Line::date;
 std::string Line::value;
 
+Line::~Line() {};
+Line::Line(const Line &rhs) { *this = rhs; };
+Line & Line::operator=(const Line &rhs) {
+    if (this != &rhs) {
+        this->date = rhs.date;
+        this->value = rhs.value;
+    };
+    return *this;
+};
+
 size_t Line::digitsAfterDecimal(const std::string &str) {
     size_t decimalPos = str.find('.');
     if (decimalPos != std::string::npos) {
@@ -50,7 +60,9 @@ Line::Line(std::string line) {
 
     std::stringstream(valuePart) >> val;
     Line::date = datePart;
-    Line::value = std::to_string(val);
+    std::ostringstream oss;
+    oss << val;
+    Line::value = oss.str();
 
     if (datePart.empty()) {
         throw Line::InvalidLine();
@@ -59,12 +71,15 @@ Line::Line(std::string line) {
     int year, month, day;
     char dash1, dash2;
     dateStream >> year >> dash1 >> month >> dash2 >> day;
+    setValue(val);
     setYear(year);
     setMonth(month);
     setDay(year, month, day);
-    setValue(val);
 }
-void Line::setValue(int value) {
+
+
+
+void Line::setValue(long value) {
     if (value < 0) {
         throw Line::NegativeVal();
     } else if (value > 1000) {

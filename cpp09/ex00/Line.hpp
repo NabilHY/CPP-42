@@ -8,6 +8,7 @@
 #include <sstream>
 #include <map>
 #include <ctime>
+#include <iomanip>
 
 class Line {
     // Static members to hold the date and value
@@ -16,9 +17,9 @@ class Line {
         static std::string value;
 
         Line(std::string line);  // Constructor declaration
-        // ~Line();
-        // Line(const Line &);
-        // Line&  operator =(const Line &);
+        ~Line();
+        Line(const Line &);
+        Line&  operator =(const Line &);
 
         static  size_t digitsAfterDecimal(const std::string &);
         static  bool    doublePointChecker(const std::string &);
@@ -49,7 +50,7 @@ class Line {
         };
 
         // Member functions to validate values
-        void setValue(int value);
+        void setValue(long value);
         void setYear(int y);
         void setMonth(int m);
         void setDay(int y, int m, int d);
