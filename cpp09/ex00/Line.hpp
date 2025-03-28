@@ -16,7 +16,7 @@ class Line {
         static std::string date;
         static std::string value;
 
-        Line(std::string line);  // Constructor declaration
+        Line(std::string line);
         ~Line();
         Line(const Line &);
         Line&  operator =(const Line &);
