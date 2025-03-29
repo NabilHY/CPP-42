@@ -3,8 +3,6 @@
 std::string Line::date;
 std::string Line::value;
 
-Line::Line() {}
-
 Line::~Line() {}
 
 Line::Line(const Line &rhs) {
