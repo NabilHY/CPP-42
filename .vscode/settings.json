@@ -121,6 +121,12 @@
     "type_traits": "cpp",
     "unordered_map": "cpp",
     "utility": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "__tree": "cpp",
+    "map": "cpp",
+    "filesystem": "cpp",
+    "__memory": "cpp",
+    "*.tpp": "cpp",
+    "__functional_03": "cpp"
   }
 }

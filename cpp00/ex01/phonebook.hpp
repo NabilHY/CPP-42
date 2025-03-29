@@ -24,7 +24,6 @@ class Phonebook
   private:
 	static int Index;
 	Contact Contacts[8];
-  
   public:
 	void row_top();
 	std::string get_trunc(std::string &str);

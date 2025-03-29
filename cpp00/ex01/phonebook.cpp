@@ -15,6 +15,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 bool	is_valid(const std::string &input)
 {
 	if (input.empty())
@@ -128,7 +130,7 @@ void Phonebook::get_input(std::string type, Contact *contacts, int index)
 void Phonebook::add(Contact *contacts, int *index)
 {
 	if (*index == 8)
-		*index = 0;
+		*index = 0;    
 	get_input("First Name", contacts, *index);
 	get_input("Last Name", contacts, *index);
 	get_input("Nickname", contacts, *index);
@@ -143,7 +145,7 @@ void Phonebook::contact_index(Contact *contacts, int count)
 	int	i;
 
 	std::string index;
-	while (1)
+	while (!std::cin.eof())
 	{
 		std::cout << "Enter a valid index: ";
 		std::getline(std::cin, index);

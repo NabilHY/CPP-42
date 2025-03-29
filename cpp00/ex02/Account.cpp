@@ -130,6 +130,7 @@ int Account::checkAmount() const
 void Account::displayStatus() const
 {
 	_displayTimestamp();
+	
 	std::cout << "index:"
 	<< this->_accountIndex << ";amount:"
 	<< this->_amount << ";deposits:"

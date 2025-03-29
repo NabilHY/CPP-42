@@ -13,7 +13,7 @@
 #include <string>
 #include "contact.hpp"
 
-Contact::Contact(){
+Contact::Contact() {
 	Index = 0;
 	First_name = "";
 	Last_name = "";
