@@ -5,7 +5,12 @@ std::map<std::string, double> BitcoinExchange::db;
 BitcoinExchange::BitcoinExchange() {};
 BitcoinExchange::~BitcoinExchange() {};
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &rhs) { *this = rhs; };
-BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange &rhs) { (void)rhs; return *this; };
+BitcoinExchange & BitcoinExchange::operator=(const BitcoinExchange &rhs) {
+    if (this != &rhs) {
+        this->db = rhs.db;
+    };
+    return *this;
+};
 
 const char * BitcoinExchange::InvalidArgument::what() const throw () {
     return "Error: could not open file.";
@@ -38,12 +43,20 @@ void BitcoinExchange::loadDatabaseFromCSV() {
     }
 }
 
+std::string BitcoinExchange::doubleToString(double num) {
+    std::ostringstream oss;
+    oss << num;
+    return oss.str();
+}
+
 void BitcoinExchange::printExchangeRate(const std::string &date, const std::string &value, double rate) {
-    double count = std::stod(value);
+    double count = std::atof(value.c_str());
     double result = rate * count;
-    
-    std::cout << date << " => " << std::fixed << std::setprecision(Line::digitsAfterDecimal(std::to_string(count))) << count << " = "
-              << std::fixed << std::setprecision(Line::digitsAfterDecimal(std::to_string(result))) 
+
+    std::cout << date << " => " << std::fixed 
+              << std::setprecision(Line::digitsAfterDecimal(BitcoinExchange::doubleToString(count))) 
+              << count << " = " << std::fixed 
+              << std::setprecision(Line::digitsAfterDecimal(BitcoinExchange::doubleToString(result))) 
               << result << std::endl;
 }
 
@@ -73,7 +86,7 @@ void BitcoinExchange::findExchangeRate(const std::string &date, const std::strin
 }
 
 void    initSearch(std::string filename) {
-    std::ifstream  file(filename);
+    std::ifstream file(filename.c_str());
     if (!file.is_open()) {
         throw std::ios_base::failure("Error: File Not open!");
     }

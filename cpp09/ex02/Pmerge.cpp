@@ -47,7 +47,6 @@ void Pmerge::parseAndValidateInput(const std::string& input, std::vector<unsigne
         if (!isPositiveNumber(arg)) {
             throw IncorrectArgs();
         }
-
         unsigned int number = static_cast<unsigned int>(std::atoi(arg.c_str()));
         integers.push_back(number);
     }
@@ -171,7 +170,7 @@ void Pmerge::merge(std::deque<unsigned int>& deque, int l, int mid, int r) {
 /*****************************/
 
 /*
-    Merge Sort
+Merge Sort
 */
 
 void    Pmerge::mergeSort(std::vector<unsigned int>&vector, int l, int r) {
@@ -180,7 +179,7 @@ void    Pmerge::mergeSort(std::vector<unsigned int>&vector, int l, int r) {
     Pmerge::mergeSort(vector, l, mid);
     Pmerge::mergeSort(vector, mid + 1, r);
     Pmerge::merge(vector, l, mid ,r);
-}
+};
 
 void    Pmerge::mergeSort(std::deque<unsigned int>&deque, int l, int r) {
     if (l >= r)  return;
