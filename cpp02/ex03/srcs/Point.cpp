@@ -19,7 +19,7 @@ Point::Point (): x(0), y(0){};
 Point::Point (const float a, const float b): x(a), y(b){};
 Point::~Point (){};
 Point::Point (const Point &ref) : x(ref.x), y(ref.y){};
-Point& Point::operator = (const Point &ref) {return *this;};
+Point& Point::operator = (const Point &ref) { (void)ref ;return *this;};
 float Point::getX() const { return x.toFloat(); };
 float Point::getY() const { return y.toFloat(); };
 
